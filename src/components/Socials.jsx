@@ -14,7 +14,7 @@ const icons = [
     name: <RiYoutubeFill />,
   },
   {
-    path: "/",
+    path: "",
     name: <RiLinkedinFill />,
   },
   {
