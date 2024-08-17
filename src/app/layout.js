@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProviders";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio WebApp",
+  title: "Portfolio of Harsh Singh",
   description:
     "Created a Portfolio WebApp to demonstrate all Project till my full-stack web development journey",
   icons: {
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         <main className="max-w-[1700px] m-auto">
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >

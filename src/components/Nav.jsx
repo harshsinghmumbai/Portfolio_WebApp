@@ -17,7 +17,7 @@ const Nav = ({ containerStyles, linkStyles, underlineStyles }) => {
           <Link
             href={link.path}
             key={index}
-            className={`capitalize ${linkStyles}`}
+            className={`capitalize focus:text-[#fe6e58] focus:font-semibold ${linkStyles}`}
           >
             {link.path === path && (
               <motion.span

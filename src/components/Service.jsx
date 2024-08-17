@@ -1,5 +1,7 @@
 "use client";
-import { GanttChartSquare, Blocks, Gem } from "lucide-react";
+import { IoDiamond } from "react-icons/io5";
+import { HiSquare3Stack3D } from "react-icons/hi2";
+import { LuGanttChartSquare } from "react-icons/lu";
 import {
   Card,
   CardContent,
@@ -10,34 +12,34 @@ import {
 
 const serviceData = [
   {
-    icon: <GanttChartSquare size={72} strokeWidth={0.8} />,
-    title: "Web Designer",
+    icon: <IoDiamond className="w-full h-full" />,
+    title: "Full Stack Web Developer",
     description:
-      "Web Developer for Google Cloud Platform Developer Services Services Services",
+      "A full-stack web developer is a person who can develop both client and server part of WebApplication.",
   },
   {
-    icon: <Blocks size={72} strokeWidth={0.8} />,
-    title: "Web Developer",
+    icon: <HiSquare3Stack3D className="w-full h-full mb-5" />,
+    title: "MERN Stack Developer",
     description:
-      "Web Developer for Google Cloud Platform Developer Services Services Services",
+      "MERN stands for MongoDB, Express, React, & Node.js. It's used to develop web applications.",
   },
   {
-    icon: <Gem size={72} strokeWidth={0.8} />,
-    title: "App Developer",
+    icon: <LuGanttChartSquare className="w-full h-full mb-5" />,
+    title: "Front-End Developer",
     description:
-      "Web Developer for Google Cloud Platform Developer Services Services Services",
+      "A front-end developer creates the front-end part of webapp & that users see and interact with it.",
   },
 ];
 
 const Service = () => {
   return (
-    <section className="mb-12 mt-6 xl:mb-36">
+    <section className="mb-12 mt-6 xl:mb-24 xl:mt-14">
       <div className="container mx-auto">
-        <h2 className="section-title mb-12 xl:mb-24 text-center mx-auto">
+        <h2 className="section-title mb-20 xl:mb-24 text-center mx-auto">
           My Services
         </h2>
         {/* grid items */}
-        <div className="grid xl:grid-cols-3 lg:grid lg:grid-cols-3 justify-center gap-y-12 xl:gap-y-24 xl:gap-x-8">
+        <div className="grid xl:grid-cols-3 lg:grid lg:gap-4 lg:grid-cols-3 justify-center gap-y-12 xl:gap-y-24 xl:gap-x-8">
           {serviceData.map((item, index) => {
             return (
               <Card
@@ -50,7 +52,7 @@ const Service = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <CardTitle className="mb-4">{item.title}</CardTitle>
+                  <CardTitle className="mb-4 mt-4">{item.title}</CardTitle>
                   <CardDescription className="text-lg">
                     {item.description}
                   </CardDescription>

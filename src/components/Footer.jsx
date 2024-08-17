@@ -12,9 +12,9 @@ const Footer = () => {
               iconsStyles="text-primary dark:text-white/70 text-[20px] hover:text-white dark:hover:text-primary transition-all"
             />
             {/* copyright */}
-            <div className="text-muted-foreground">
-              Copyright &copy; Ryan Davis. All rights reserved.
-            </div>{" "}
+            <div className="text-muted-foreground text-center">
+              Copyright &copy; harshsinghmumbai. All rights reserved.
+            </div>
           </div>
         </div>
       </footer>

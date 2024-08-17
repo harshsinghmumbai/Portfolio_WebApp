@@ -11,6 +11,12 @@ import {
   Briefcase,
 } from "lucide-react";
 import Image from "next/image";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const infoData = [
   {
@@ -23,7 +29,7 @@ const infoData = [
   },
   {
     icons: <MailIcon size={20} />,
-    text: "harshrsingh555@gmail.com",
+    text: "harshrsingh552005@gmail.com",
   },
   {
     icons: <Calendar size={20} />,
@@ -35,48 +41,28 @@ const infoData = [
   },
   {
     icons: <HomeIcon size={20} />,
-    text: "Arihant City ",
+    text: "Arihant City, Kalyan Road",
   },
 ];
 
 const qualificationData = [
   {
-    title: "education",
+    title: "Education",
     data: [
       {
-        university: "Example University",
-        qualification: "Bachelor of Science",
-        years: "2015 - 2018",
+        company: "SSC",
+        role: "Jyoti English High School, Pimpri, Pune",
+        years: "Completed March 2020",
       },
       {
-        university: "Another University",
-        qualification: "Master of Arts",
-        years: "2019 - 2021",
+        company: "Diploma in Computer Engineering",
+        role: "Vidya Prasarak Mandal's Collge Thane",
+        years: "August 2020 - July 2024",
       },
       {
-        university: "Yet Another University",
-        qualification: "Ph.D in Computer Science",
-        years: "2015 - 2018",
-      },
-    ],
-  },
-  {
-    title: "experience",
-    data: [
-      {
-        company: "Example",
+        company: "Degree in Computer Engineering",
         role: "Master of Engineer",
-        years: "2015 - 2018",
-      },
-      {
-        company: "Example",
-        role: "Master of Engineer",
-        years: "2015 - 2018",
-      },
-      {
-        company: "Example",
-        role: "Master of Engineer",
-        years: "2015 - 2018",
+        years: "2024 - 2026",
       },
     ],
   },
@@ -87,16 +73,16 @@ const skillData = [
     title: "skills",
     data: [
       {
-        name: "HTML, CSS",
+        name: "Tailwindcss, Shadcn/ui",
       },
       {
-        name: "Front-end Development",
+        name: "Front-end Development Technologies",
       },
       {
-        name: "Javascript, PHP",
+        name: "Javascript, Next.js, Redux-toolkit",
       },
       {
-        name: "Back-end Development",
+        name: "Back-end Development Technologies",
       },
     ],
   },
@@ -104,16 +90,16 @@ const skillData = [
     title: "tools",
     data: [
       {
-        imgPath: "/assets/about/figma.svg",
+        imgPath: "/assets/about/next.svg",
       },
       {
-        imgPath: "/assets/about/notion.svg",
+        imgPath: "/assets/about/github.svg",
       },
       {
         imgPath: "/assets/about/vscode.svg",
       },
       {
-        imgPath: "/assets/about/wordpress.svg",
+        imgPath: "/assets/about/postman.svg",
       },
     ],
   },
@@ -131,12 +117,32 @@ const About = () => {
         </h2>
         <div className="flex flex-col xl:flex-row lg:flex-row">
           {/* image */}
-          <div className="hidden xl:flex lg:flex lg:pr-10 flex-1 relative">
-            <DevImg
-              containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
-              imgSrc="/assets/about/developer.png"
-            />
-          </div>
+          <HoverCard className="">
+            <HoverCardTrigger asChild>
+              <div className="hidden xl:flex lg:flex lg:pr-10 flex-1 relative w-fit h-fit cursor-pointer">
+                <DevImg
+                  containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
+                  imgSrc="/assets/about/harsh_lignt.png"
+                />
+              </div>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80">
+              <div className="flex justify-between space-x-4">
+                <Avatar>
+                  <AvatarImage src="/assets/about/harsh_lignt.png" />
+                  <AvatarFallback>HS</AvatarFallback>
+                </Avatar>
+                <div className="space-y-1">
+                  <h4 className="text-sm font-semibold">My Real Photo</h4>
+                  <p className="text-sm">
+                    This photo does not look good compared to the Dummy Image
+                    above, and it does not match the theme of my portfolio web
+                    app.
+                  </p>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
           <div className="flex-1">
             <Tabs defaultValue="personal">
               <TabsList className="w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none py-2">
@@ -156,20 +162,21 @@ const About = () => {
               <div className="text-lg mt-12 xl:mt-8">
                 <TabsContent value="personal">
                   <div className="text-center xl:text-left">
-                    <h3 className="h3 mb-4">
-                      Unmatched Service Quality for Over 10 Years
+                    <h3 className="h3 mb-4 capitalize">
+                      Project-Based Learning approve in My Full Stack Web
+                      Development Journey
                     </h3>
-                    <p className="subtitle max-w-xl mx-auto xl:mx-0">
-                      I specialize in crafting intuitive websites with
-                      cutting-edge technology, delivering dynamic and engaging
-                      user experiences.
+                    <p className="subtitle max-w-xl mx-auto xl:mx-0 capitalize">
+                      Focusing on making next.js full stack Project include
+                      front,backend,database using multiple Technology like RTK
+                      ,Shadcn/ui, Tailwindcss etc
                     </p>
                     {/* icons */}
-                    <div className="grid xl:grid-cols-2 gap-4 mb-12">
+                    <div className="flex flex-col space-y-4 md:grid md:grid-cols-2 mb-10 lg:flex">
                       {infoData.map((item, index) => {
                         return (
                           <div
-                            className="flex items-center gap-x-4 mx-auto xl:mx-0"
+                            className="flex items-center gap-x-2 md:gap-x-4 mx-auto xl:mx-0"
                             key={index}
                           >
                             <div className="text-primary">{item.icons}</div>
@@ -188,7 +195,7 @@ const About = () => {
                 <TabsContent value="qualifications">
                   <div>
                     <h3 className="h3 mb-8 text-center tracking-wider">
-                      My Awesome Journey
+                      My Educational Journey
                       <p className="border-b border-border mb-4 mt-3"></p>
                     </h3>
                     <div>
@@ -196,11 +203,11 @@ const About = () => {
                         <div className="flex justify-center gap-x-2 pr-14 items-center text-[22px] text-primary">
                           <Briefcase />
                           <h4 className="capitalize font-medium">
-                            {getData(qualificationData, "experience").title}
+                            {getData(qualificationData, "Education").title}
                           </h4>
                         </div>
                         <div className="flex flex-col mt-3 gap-y-8 ">
-                          {getData(qualificationData, "experience").data.map(
+                          {getData(qualificationData, "Education").data.map(
                             (item, index) => {
                               const { company, role, years } = item;
                               return (
@@ -238,13 +245,13 @@ const About = () => {
                       <h4 className="text-xl font-semibold mb-2">Skills</h4>
                       <div className="border-b border-border mb-4"></div>
                       {/* skill list */}
-                      <div>
+                      <div className="space-y-2">
                         {getData(skillData, "skills").data.map(
                           (item, index) => {
                             const { name } = item;
                             return (
                               <div
-                                className="w-2/4 text-center xl:text-left mx-auto xl:mx-0"
+                                className="w-[95%] text-center xl:text-left mx-auto xl:mx-0"
                                 key={index}
                               >
                                 <div className="font-medium">{name}</div>

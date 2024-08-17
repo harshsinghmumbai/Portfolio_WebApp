@@ -4,15 +4,36 @@ import { Button } from "./ui/button";
 import { LinkedinIcon, GithubIcon } from "lucide-react";
 import {
   RiBriefcase4Fill,
-  RiTeamFill,
-  RiTodoFill,
   RiArrowDownSLine,
+  RiGitRepositoryFill,
 } from "react-icons/ri";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { GoRepo } from "react-icons/go";
 import DevImg from "./DevImg";
 import Badge from "./Badge";
-import Socials from "./Socials";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [repos, setRepos] = useState(0);
+
+  const getRepoData = async () => {
+    try {
+      const url = `https://api.github.com/users/harshsinghmumbai`;
+      const response = await fetch(url);
+      const data = await response.json();
+      setRepos(data.public_repos);
+    } catch (error) {
+      console.log("Error during fetching data", error);
+    }
+  };
+  useEffect(() => {
+    getRepoData();
+  }, []);
   return (
     <>
       <section className=" pb-20 xl:py-24 h-fit xl:pt-10 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none">
@@ -28,7 +49,7 @@ const Hero = () => {
               </h1>
               <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
                 Passionate to be a Full-Stack Web developer 👨‍💻 using MERN Stack
-                Path 🚀|| Computer Engineering Student
+                Path 🚀& also Computer Engineering Student.
               </p>
               <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12">
                 <Link
@@ -48,43 +69,57 @@ const Hero = () => {
                   </Button>
                 </Link>
               </div>
-              {/* <Socials
-                containerStyles="flex gap-x-6 mx-auto xl:mx-0"
-                iconsStyles="text-foreground text-[22px] hover:text-primary transition-all"
-              /> */}
             </div>
             {/* image */}
             <div className="hidden xl:flex lg:flex relative">
               <Badge
-                containerStyles="absolute top-[24%] xl:-left-[5rem] lg:-left-[4rem]"
+                containerStyles="absolute top-[29%] xl:-left-[5rem] lg:-left-[3.7rem]"
                 icon={<RiBriefcase4Fill />}
-                endCountNum={3}
-                badgeText="Years Of Experience"
+                endCountNum={2}
+                badgeText="Month of Internship"
               />
               <Badge
-                containerStyles="absolute top-[80%] -left-[1rem]"
-                icon={<RiTodoFill />}
-                endCountNum={6}
-                endCountText="k"
-                badgeText="Finished Projects"
+                containerStyles="absolute top-[80%] -left-[1rem] "
+                icon={<RiGitRepositoryFill className="text-[#fe6e58]" />}
+                endCountNum={repos}
+                badgeText="Github Repository"
               />
               <Badge
                 containerStyles="absolute top-[55%] -right-8"
-                icon={<RiTeamFill />}
-                endCountNum={9}
-                endCountText="k"
-                badgeText="Happy Clients"
+                icon={<GoRepo />}
+                endCountNum={1}
+                badgeText="Full Stack Projects"
               />
               <div className="bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px] bg-no-repeat absolute -top-1 -right-2"></div>
-              <DevImg
-                containerStyles="bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom"
-                imgSrc="/assets/hero/developer.png"
-              />
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <div className="cursor-pointer">
+                    <DevImg
+                      containerStyles="bg-hero_shape w-[510px] h-[462px] bg-no-repeat relative bg-bottom"
+                      imgSrc="/assets/hero/developer.png"
+                    />
+                  </div>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-80">
+                  <div className="flex justify-between space-x-4">
+                    <Avatar>
+                      <AvatarImage src="/assets/hero/developer.png" />
+                      <AvatarFallback>HS</AvatarFallback>
+                    </Avatar>
+                    <div className="space-y-1">
+                      <h4 className="text-sm font-semibold">
+                        This is Dummy Image
+                      </h4>
+                      <p className="text-sm">
+                        Dummy Image was created to enhance look of WebApp
+                        landing pages & make good first impression of My
+                        portfolio WebApp
+                      </p>
+                    </div>
+                  </div>
+                </HoverCardContent>
+              </HoverCard>
             </div>
-          </div>
-          {/* icon */}
-          <div className="hidden md:flex absolute left-2/4 bottom-0 xl:bottom-12 animate-bounce">
-            <RiArrowDownSLine className="text-3xl text-primary" />
           </div>
         </div>
       </section>

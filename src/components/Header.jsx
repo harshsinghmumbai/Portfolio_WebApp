@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
 //Component//
 import Logo from "./Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -16,7 +15,6 @@ const Header = () => {
     const scrollYPos = window.addEventListener("scroll", () => {
       window.scrollY > 50 ? setHeader(true) : setHeader(false);
     });
-
     return () => window.removeEventListener("scroll", scrollYPos);
   });
   return (
