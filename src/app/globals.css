@@ -26,7 +26,6 @@
   .swiper-pagination-bullet {
   @apply bg-primary my-10;
 }
-/* HTML: <div class="loader"></div> */
 .loader {
   width: 50px;
   padding: 8px;
@@ -44,6 +43,9 @@
   to {
     transform: rotate(1turn);
   }
+}
+.btn {
+  @apply flex items-center gap-x-1 max-w-[166px] rounded-3xl text-base lg:ml-3;
 }
 @tailwind utilities;
 

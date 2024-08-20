@@ -115,7 +115,7 @@ const Work = () => {
             functionality in Project
           </p>
           <Link href="/project">
-            <Button>All projects</Button>
+            <Button className="rounded-3xl text-base">All projects</Button>
           </Link>
         </div>
         {/* slider */}

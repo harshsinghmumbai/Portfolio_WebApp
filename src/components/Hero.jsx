@@ -56,7 +56,7 @@ const Hero = () => {
                   href={"https://www.linkedin.com/in/harshsinghmumbai/"}
                   target="black"
                 >
-                  <Button className="">
+                  <Button className="rounded-3xl text-base" size="lg">
                     LinkedIn Profile <LinkedinIcon size={18} className="ml-2" />
                   </Button>
                 </Link>
@@ -64,7 +64,11 @@ const Hero = () => {
                   href={"https://github.com/harshsinghmumbai"}
                   target="black"
                 >
-                  <Button variant="secondary" className="">
+                  <Button
+                    variant="secondary"
+                    className="rounded-3xl text-base"
+                    size="lg"
+                  >
                     Github Profile <GithubIcon size={18} className="ml-3" />
                   </Button>
                 </Link>

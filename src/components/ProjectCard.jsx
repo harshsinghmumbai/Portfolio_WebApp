@@ -23,7 +23,7 @@ import {
 const ProjectCard = ({ project }) => {
   const { image, category, name, description, link, linkedin, github, video } =
     project;
-  const describe = description.substring(0, 60);
+  const describe = description.substring(0, 55);
   return (
     <Card className="group dark:border dark:border-gray-600 overflow-hidden relative">
       <CardHeader className="p-0">
@@ -96,7 +96,7 @@ const ProjectCard = ({ project }) => {
         </Badge>
         <h4 className="h4 mb-1">{name}</h4>
         <div className="text-muted-foreground text-lg">
-          {description.length <= 60 ? description : `${describe}...`}
+          {description.length <= 55 ? description : `${describe}...`}
           <Dialog>
             <DialogTrigger asChild>
               <Badge
