@@ -86,7 +86,7 @@ const Form_Validation = () => {
               )}
             />
             <Button type="submit" className="btn">
-              Let's Talk
+              Let&apos; Talk
               <ArrowRightIcon size={20} />
             </Button>
           </form>

@@ -14,7 +14,7 @@ const contact = () => {
                 <span className="w-[30px] h-[2px] bg-primary"></span>
                 Say Hello 👋
               </div>
-              <h1 className="h1 max-w-md mb-8">Let's Work Together</h1>
+              <h1 className="h1 max-w-md mb-8">Let&apos; Work Together</h1>
               <p className="subtitle max-w-[400px]">
                 Focusing on making next.js advanced level project using RTK,
                 Shadcn/ui etc
