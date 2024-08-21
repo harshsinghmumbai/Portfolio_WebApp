@@ -60,8 +60,8 @@ const qualificationData = [
         years: "August 2020 - July 2024",
       },
       {
-        company: "Degree in Computer Engineering",
-        role: "Master of Engineer",
+        company: "Finding College for Degree in C.O",
+        role: "....",
         years: "2024 - 2026",
       },
     ],

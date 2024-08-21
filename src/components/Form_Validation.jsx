@@ -14,6 +14,7 @@ import { Textarea } from "./ui/textarea";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendEmail } from "@/lib/resend";
+import { toast } from "sonner";
 
 const Form_Schema = z.object({
   Name: z
@@ -41,9 +42,15 @@ const Form_Validation = () => {
   });
 
   const onSubmit = (value) => {
+    const { Name, Email, textarea } = value;
     console.log(value);
-    sendEmail();
+    sendEmail({ Name, Email, textarea });
     form.reset();
+    toast(`${Name}`, {
+      description: `${Name} your Message Received Me Successfully`,
+      className:
+        "group-[.toaster]:bg-green-200 group-[.toaster]:border-2 group-[.toaster]:border-green-200 group-[.toaster]:dark:text-black",
+    });
   };
   return (
     <>
@@ -74,7 +81,7 @@ const Form_Validation = () => {
                       className="resize-none"
                     />
                   </FormControl>
-                  <FormMessage className="px-3 md:text-base font-semibold" />
+                  <FormMessage className="px-3 md:text-base font-semibold dark:text-red-600" />
                 </FormItem>
               )}
             />
@@ -105,7 +112,7 @@ const SignupForm = ({ name, inputType, placeholder, formControl }) => {
               {...field}
             />
           </FormControl>
-          <FormMessage className="px-3 md:text-base font-semibold" />
+          <FormMessage className="px-3 md:text-base font-semibold dark:text-red-600" />
         </FormItem>
       )}
     />
