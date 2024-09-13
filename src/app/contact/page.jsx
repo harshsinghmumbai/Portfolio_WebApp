@@ -7,7 +7,7 @@ const contact = () => {
       <section>
         <div className="container mx-auto">
           {/* text illustration */}
-          <div className="grid lg:grid-cols-2 pt-12 lg:h-[480px] mb-6 lg:mb-24">
+          <div className="sm:grid sm:grid-cols-2 pt-12 lg:h-[480px] mb-6 lg:mb-24">
             {/* text */}
             <div className="flex flex-col justify-center">
               <div className="flex items-center gap-x-4 text-primary text-lg mb-4">

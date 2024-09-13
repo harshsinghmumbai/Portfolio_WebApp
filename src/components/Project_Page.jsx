@@ -170,6 +170,19 @@ const projectData = [
   },
   {
     video:
+      "https://media.licdn.com/dms/image/v2/D5605AQElp3v5DNQh3g/videocover-low/videocover-low/0/1725616039045?e=1726848000&v=beta&t=6NnFlZ1txYM3KZo8Zp6PFQoAHHGRZSWiDsKgcvYUWKY",
+    image: "/assets/work/20.png",
+    category: "Major Project",
+    name: "Google Authentication",
+    description:
+      "I implemented Google Authentication to trigger upon page rendering. After 6 seconds, it will check if you are signed in and prompt you to authenticate if not.",
+    link: "https://g-auth-harshsinghmumbai.vercel.app/",
+    github: "https://github.com/harshsinghmumbai/Google_Authentication",
+    linkedin:
+      "https://www.linkedin.com/posts/harshsinghmumbai_project-title-google-authentication-activity-7237758417841373184--fV2?utm_source=share&utm_medium=member_desktop",
+  },
+  {
+    video:
       "https://dms.licdn.com/playlist/vid/D5605AQHTeobPNNs8mw/mp4-640p-30fp-crf28/0/1716986817216?e=2147483647&v=beta&t=gmqFUXckBS4iDLIhnd5Aa7smDTLPxx3eKyrh_sjC21k",
     image: "/assets/work/3_popular.png",
     category: "Major Project",
