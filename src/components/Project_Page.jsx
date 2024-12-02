@@ -170,6 +170,19 @@ const projectData = [
   },
   {
     video:
+      "https://dms.licdn.com/playlist/vid/v2/D5605AQHj--DUR5mEFA/mp4-640p-30fp-crf28/mp4-640p-30fp-crf28/0/1730624439682?e=2147483647&v=beta&t=SX4RKBoPxIjkZ23yDtBYKz_CsP4gGUigCH3F3_dgvew",
+    image: "/assets/work/21.1.png",
+    category: "Major Project",
+    name: "Auth_Credential_Provider",
+    description:
+      "I had Created authentication and authorization using credential provider by Next.js Framework and with help of NextAuth.js",
+    link: "https://auth-credential-providers.vercel.app/",
+    github: "https://github.com/harshsinghmumbai/Auth_Credential_Provider",
+    linkedin:
+      "https://www.linkedin.com/posts/harshsinghmumbai_nextjs-react-webdevelopment-activity-7258765202223976448-HUN0?utm_source=share&utm_medium=member_desktop",
+  },
+  {
+    video:
       "https://media.licdn.com/dms/image/v2/D5605AQElp3v5DNQh3g/videocover-low/videocover-low/0/1725616039045?e=1726848000&v=beta&t=6NnFlZ1txYM3KZo8Zp6PFQoAHHGRZSWiDsKgcvYUWKY",
     image: "/assets/work/20.png",
     category: "Major Project",
@@ -263,13 +276,13 @@ const Project_Page = () => {
   });
   return (
     <>
-      <section className="min-h-screen pt-12">
+      <section className="min-h-screen pt-20">
         <div className="container mx-auto">
           <h1 className="section-title mb-8 xl:mb-16 text-center mx-auto">
             My Projects
           </h1>
           <Tabs defaultValue={category} className="mb-24 xl:mb-48">
-            <TabsList className="w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none">
+            <TabsList className="w-full grid h-full md:grid-cols-4 lg:max-w-[640px] mb-12 mx-auto md:border dark:border-none duration-500">
               {categories.map((category, index) => {
                 return (
                   <TabsTrigger

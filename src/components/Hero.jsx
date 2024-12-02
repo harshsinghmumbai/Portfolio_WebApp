@@ -33,7 +33,7 @@ const Hero = () => {
   }, []);
   return (
     <>
-      <section className="pb-16 xl:py-24 h-fit xl:pt-10 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none">
+      <section className="pb-16 h-fit pt-5 md:pt-11 py-8 md:py-11 lg:pt-20 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none">
         {/* mobile view */}
         <div className="block lg:hidden">
           <div className="flex justify-between gap-x-8 ">
