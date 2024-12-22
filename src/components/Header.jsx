@@ -7,7 +7,6 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 import Logo from "./Logo";
 import MobileNavbar from "./MobileNavbar";
@@ -35,7 +34,7 @@ export const Header = ({ className }) => {
   });
 
   return (
-    <div className="flex justify-center items-center bg-[#fef9f5]">
+    <div className="flex justify-center items-center bg-[#fef9f5] z-40">
       <AnimatePresence mode="wait">
         <motion.div
           initial={{
@@ -50,7 +49,7 @@ export const Header = ({ className }) => {
             duration: 0.2,
           }}
           className={cn(
-            "flex w-full fixed top-0 rounded-b-xl z-50 justify-between items-center p-4 sm:p-3 px-7 sm:px-9 backdrop-blur-sm border border-b-[#f26b56] bg-white/20 dark:bg-black/20 max-w-[1700px] m-auto",
+            "flex w-full fixed top-0 rounded-b-xl z-50 justify-between items-center p-2 px-7 sm:px-9 backdrop-blur-sm border border-b-[#f26b56] bg-white/20 dark:bg-black/20 max-w-[1700px] m-auto",
             className
           )}
         >

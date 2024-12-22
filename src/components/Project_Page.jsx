@@ -276,7 +276,7 @@ const Project_Page = () => {
   });
   return (
     <>
-      <section className="min-h-screen pt-20">
+      <section className="min-h-screen pt-24">
         <div className="container mx-auto">
           <h1 className="section-title mb-8 xl:mb-16 text-center mx-auto">
             My Projects

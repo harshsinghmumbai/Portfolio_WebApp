@@ -309,16 +309,16 @@ const About = () => {
         </h2>
         <div className="flex flex-col xl:flex-row lg:flex-row">
           {/* image */}
-          <HoverCard className="">
+          <HoverCard>
             <HoverCardTrigger asChild>
-              <div className="hidden xl:flex lg:flex lg:pr-10 flex-1 relative w-fit h-fit cursor-pointer">
+              <div className="hidden xl:flex lg:flex lg:pr-10 pl-10 xl:pl-24 flex-1 relative w-fit h-fit cursor-pointer">
                 <DevImg
                   containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
                   imgSrc="/assets/about/harsh_lignt.png"
                 />
               </div>
             </HoverCardTrigger>
-            <HoverCardContent className="w-80">
+            <HoverCardContent className="w-80 z-10">
               <div className="flex justify-between space-x-4">
                 <Avatar>
                   <AvatarImage src="/assets/about/harsh_lignt.png" />

@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Meteors } from "./ui/Meteors";
 
 const serviceData = [
   {
@@ -21,13 +22,13 @@ const serviceData = [
     icon: <HiSquare3Stack3D className="w-full h-full mb-5" />,
     title: "MERN Stack Developer",
     description:
-      "MERN stands for MongoDB, Express, React, & Node.js. It's used to develop web applications.",
+      "MERN Stack Developer stands for MongoDB, Express, React, & Node.js ,It used to develop web app.",
   },
   {
     icon: <LuGanttChartSquare className="w-full h-full mb-5" />,
     title: "Front-End Developer",
     description:
-      "A front-end developer creates the front-end part of webapp & that users see and interact with it.",
+      "A front-end developer creates the front-end part of web application & that users see and interact with it.",
   },
 ];
 
@@ -35,7 +36,7 @@ const Service = () => {
   return (
     <section className="mb-12 mt-6 xl:mb-24 xl:mt-14">
       <div className="container mx-auto">
-        <h2 className="section-title mb-20 xl:mb-24 text-center mx-auto">
+        <h2 className="section-title mb-12 sm:mb-20 xl:mb-24 text-center mx-auto">
           My Services
         </h2>
         {/* grid items */}
@@ -43,16 +44,17 @@ const Service = () => {
           {serviceData.map((item, index) => {
             return (
               <Card
-                className="w-full max-w-[424px] h-[300px] flex flex-col pt-16 pb-10 justify-center items-center relative border border-gray-600"
+                className="w-full max-w-[424px] h-fit flex flex-col pt-16 pb-10 justify-center items-center relative border border-gray-600 overflow-hidden shadow-sm dark:shadow-md shadow-gray-900 dark:shadow-white"
                 key={index}
               >
-                <CardHeader className="text-primary absolute -top-[60px]">
-                  <div className="w-[140px] h-[80px] bg-white dark:bg-background flex justify-center items-center">
+                <Meteors number={60} />
+                <CardHeader className="text-primary absolute -top-[16px]">
+                  <div className="w-[100px] h-[60px] bg-white dark:bg-background flex justify-center items-center">
                     {item.icon}
                   </div>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <CardTitle className="mb-4 mt-4">{item.title}</CardTitle>
+                  <CardTitle className="mb-4 mt-1">{item.title}</CardTitle>
                   <CardDescription className="text-lg">
                     {item.description}
                   </CardDescription>

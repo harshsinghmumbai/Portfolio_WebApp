@@ -54,7 +54,7 @@ const Form_Validation = () => {
   };
   return (
     <>
-      <div className="lg:w-[600px] h-fit">
+      <div className="lg:w-[600px] h-fit p-1 mb-16">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
             <SignupForm

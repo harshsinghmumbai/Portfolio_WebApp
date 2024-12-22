@@ -14,9 +14,11 @@ import DevImg from "./DevImg";
 import Badge from "./Badge";
 import { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TextGenerateEffect } from "./ui/text_generate_effect";
 
 const Hero = () => {
   const [repos, setRepos] = useState(0);
+  const words = `Passionate to be a Full-Stack Web developer 👨‍💻 using MERN Stack Path 🚀 & also Computer Engineering Student`;
 
   const getRepoData = async () => {
     try {
@@ -33,7 +35,7 @@ const Hero = () => {
   }, []);
   return (
     <>
-      <section className="pb-16 h-fit pt-5 md:pt-11 py-8 md:py-11 lg:pt-20 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none">
+      <section className="pb-16 h-fit pt-20 py-8 md:pt-28 md:py-11 lg:pt-20 bg-hero bg-no-repeat bg-bottom bg-cover dark:bg-none">
         {/* mobile view */}
         <div className="block lg:hidden">
           <div className="flex justify-between gap-x-8 ">
@@ -63,10 +65,9 @@ const Hero = () => {
                     <h1 className="h1 mb-4 capitalize">
                       Hello my name is Harsh Singh
                     </h1>
-                    <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
-                      Passionate to be a Full-Stack Web developer 👨‍💻 using MERN
-                      Stack Path 🚀& also Computer Engineering Student.
-                    </p>
+                    <div className="mb-5">
+                      <TextGenerateEffect words={words} />
+                    </div>
                     <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12">
                       <Link
                         href={"https://www.linkedin.com/in/harshsinghmumbai/"}
@@ -86,7 +87,7 @@ const Hero = () => {
                           className="rounded-3xl text-base"
                           size="lg"
                         >
-                          Github Profile{" "}
+                          Github Profile
                           <GithubIcon size={18} className="ml-3" />
                         </Button>
                       </Link>
@@ -131,17 +132,16 @@ const Hero = () => {
           <div className="flex justify-between gap-x-8">
             {/* text */}
             <div className="flex max-w-[600px] flex-col justify-center mx-auto xl:mx-0 text-center xl:text-left">
-              <div className="text-sm md:text-base lg:text-lg capitalize font-bold mb-4 text-primary tracking-wider">
+              <div className="text-sm md:text-base lg:text-lg capitalize ml-2 font-bold mb-4 text-primary tracking-wider">
                 Full Stack Web Developer
               </div>
               <h1 className="h1 mb-4 capitalize">
                 Hello my name is Harsh Singh
               </h1>
-              <p className="subtitle max-w-[490px] mx-auto xl:mx-0">
-                Passionate to be a Full-Stack Web developer 👨‍💻 using MERN Stack
-                Path 🚀& also Computer Engineering Student.
-              </p>
-              <div className="flex flex-col gap-y-3 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-12">
+              <div className="subtitle max-w-[490px] mx-auto xl:mx-0">
+                <TextGenerateEffect words={words} />
+              </div>
+              <div className="flex flex-col gap-y-2 md:flex-row gap-x-3 mx-auto xl:mx-0 mb-8">
                 <Link
                   href={"https://www.linkedin.com/in/harshsinghmumbai/"}
                   target="black"
@@ -167,7 +167,7 @@ const Hero = () => {
             {/* image */}
             <div className="hidden xl:flex lg:flex relative">
               <Badge
-                containerStyles="absolute top-[29%] xl:-left-[5rem] lg:-left-[3.7rem] z-10"
+                containerStyles="absolute top-[33%] xl:-left-[5rem] lg:-left-[3.7rem] z-10"
                 icon={<RiBriefcase4Fill />}
                 endCountNum={2}
                 badgeText="Month of Internship"
@@ -194,7 +194,7 @@ const Hero = () => {
                     />
                   </div>
                 </HoverCardTrigger>
-                <HoverCardContent className="w-80">
+                <HoverCardContent className="w-80 z-0">
                   <div className="flex justify-between space-x-4">
                     <Avatar>
                       <AvatarImage src="/assets/hero/developer.png" />
